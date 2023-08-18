@@ -1,0 +1,8 @@
+.menuSearch {
+  border: 1px solid #dee2e6 !important;
+}
+
+.menuSearch:focus-visible {
+  border: 1px solid #44ce42 !important;
+  outline: none;
+}

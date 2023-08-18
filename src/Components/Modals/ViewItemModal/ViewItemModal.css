@@ -1,0 +1,30 @@
+.item-description {
+  font-size: 11px;
+  color: #707070;
+}
+
+.addBtn {
+  padding: 5px 20px;
+  white-space: nowrap;
+  border: none;
+  background-color: #44ce42;
+  color: #fff;
+}
+
+.itemImg {
+  height: 150px;
+  background-color: #e7fde7;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+}
+
+.checkbox {
+  accent-color: #44ce42;
+  height: 20px;
+  width: 20px;
+}
+
+.Itemtype {
+  font-size: 12px;
+}

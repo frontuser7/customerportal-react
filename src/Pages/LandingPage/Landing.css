@@ -1,0 +1,42 @@
+.landing-chef {
+  height: 40vh;
+  z-index: 3;
+}
+
+.details-card {
+  height: max-content;
+  width: 100vw;
+  background-color: #e7fde7;
+  transition: 0.6s ease-in-out;
+  overflow-y: auto;
+}
+
+.resto-name {
+  color: #2c2c2c !important;
+  font-size: 25px;
+  font-weight: 900;
+}
+
+.resto-desc {
+  font-size: 12px;
+  color: #666666;
+}
+
+.resto-address {
+  background-color: #fff;
+  height: max-content;
+}
+
+.copyright {
+  color: #666666;
+}
+
+.tnc {
+  font-size: 10px;
+}
+
+.tnc-checkbox{
+  accent-color: #44ce42;
+  height: 20px;
+  width: 20px;
+}

@@ -1,0 +1,77 @@
+{
+    "getStarted" : {
+        "en" : "Get Started",
+        "ro" : "Incepe",
+        "uk" : "Почати"
+    },
+    "getInTouch" : {
+        "en" : "GET IN TOUCH",
+        "ro" : "INTRAȚI ÎN LEGĂTURĂ",
+        "uk" : "БУДЕМО НА ЗВ'ЯЗКУ"
+    },
+    "address" : {
+        "en" : "Address",
+        "ro" : "Abordare",
+        "uk" : "Адреса"
+    },
+    "phoneNo" : {
+        "en" : "Phone No",
+        "ro" : "nr de telefon",
+        "uk" : "Номер телефону"
+    },
+    "copyright" : {
+        "en" : "Copyright © All rights reserved.",
+        "ro" : "Copyright © Toate drepturile rezervate.",
+        "uk" : "Copyright © Усі права захищені."
+    },
+    "category" : {
+        "en" : "Category",
+        "ro" : "Categorie",
+        "uk" : "Категорія"
+    },
+    "subCategory" : {
+        "en" : "Sub Category",
+        "ro" : "Subcategorie",
+        "uk" : "Підкатегорія"
+    },
+    "searchItems" : {
+        "en" : "Search Items...",
+        "ro" : "Căutați articole...",
+        "uk" : "Пошук елементів..."
+    },
+    "items" : {
+        "en" : "Items",
+        "ro" : "Articole",
+        "uk" : "Предмети"
+    },
+    "item" : {
+        "en" : "Item",
+        "ro" : "Articol",
+        "uk" : "Пункт"
+    },
+    "plusTaxes" : {
+        "en" : "Plus Taxes",
+        "ro" : "Plus taxe",
+        "uk" : "Плюс податки"
+    },
+    "viewCart" : {
+        "en" : "View Cart",
+        "ro" : "Vizualizare coș",
+        "uk" : "Переглянути кошик"
+    },
+    "placeOrder" : {
+        "en" : "Place Order",
+        "ro" : "Plasați comanda",
+        "uk" : "Зробити замовлення"
+    },
+    "pending" : {
+        "en" : "Pending",
+        "ro" : "In asteptarea",
+        "uk" : "В очікуванні"
+    },
+    "confirmed" : {
+        "en" : "Confirmed",
+        "ro" : "Confirmat",
+        "uk" : "Підтверджено"
+    }
+}

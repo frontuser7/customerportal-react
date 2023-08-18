@@ -1,0 +1,7 @@
+.logo {
+  width: 80px;
+}
+
+.dropdown-toggle::after {
+  display: none !important;
+}

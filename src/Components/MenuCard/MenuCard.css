@@ -1,0 +1,18 @@
+.foodImg {
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  background-color: #effaef;
+}
+
+.price {
+  color: #ff6347;
+}
+.currency {
+  color: tomato;
+}
+
+.description {
+  font-size: 11px;
+  color: #707070;
+}
