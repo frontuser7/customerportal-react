@@ -8,14 +8,66 @@ import { MdNavigateBefore } from "react-icons/md";
 import { PiCallBellFill } from "react-icons/pi";
 import { useLocation, useNavigate } from "react-router-dom";
 import { Dropdown } from "react-bootstrap";
+import { useSelector, useDispatch } from "react-redux";
+import { menuData } from "../../Store/restoMenuListSlice";
+import { BASE_URL } from "../../Config/Config";
+import axios from "axios";
+import { toast } from "react-toastify";
 
 function Navbar() {
   const location = useLocation();
   const navigate = useNavigate();
+  const dispatch = useDispatch();
+
+  // for notification
+  const notify = (notification, type) =>
+    toast(notification, { autoClose: 2000, theme: "colored", type: type });
+
+  // get data from store
+  const ids = useSelector((state) => state.restoTableIds);
+  const restoSessionDetails = useSelector((state) => state.restoSession);
+
+  // destructure the data
+  const { restaurantId, tableId } = ids;
+  const { session_uuid } = restoSessionDetails;
+
+  // urls
+  const getMenuList_url = `${BASE_URL}api/userapi/restaurant/all/menu_new/${session_uuid}/en-us`;
+  const waiterHelp_URL = `${BASE_URL}api//userapi/waiter/help/${session_uuid}`;
 
   const handleLanguage = (lang) => {
-    localStorage.setItem("language" , lang)
-  }
+    localStorage.setItem("language", lang);
+  };
+
+  // get menu list api function
+  const getMenu = async () => {
+    await axios
+      .get(getMenuList_url)
+      .then((res) => {
+        if (res.data.code === 200) {
+          dispatch(menuData(res.data.data.item));
+          navigate(`/shops/menu/${restaurantId}/${tableId}`);
+        }
+      })
+      .catch((err) => {
+        console.log(err);
+        notify("Fail to get Menu List", "error");
+      });
+  };
+
+  // Call waiter function
+  const waiterHelp = async () => {
+    notify("Please wait, Waiter is on the way", "success");
+    await axios
+      .get(waiterHelp_URL)
+      .then((res) => {
+        console.log(res.data);
+      })
+      .catch((err) => {
+        console.log(err);
+        notify("Network error", "error");
+      });
+  };
   return (
     <div className="navbar p-2 d-flex justify-content-between align-items-center sticky-top bg-white">
       <div className="d-flex justify-content-between align-items-center gap-3">
@@ -24,9 +76,9 @@ function Navbar() {
             size={"25px"}
             onClick={() => {
               if (location.pathname.includes("menu")) {
-                navigate("/shops/landing/2/3");
+                navigate(`/shops/landing/${restaurantId}/${tableId}`);
               } else {
-                navigate("/shops/menu/2/3");
+                getMenu();
               }
             }}
           />
@@ -46,7 +98,9 @@ function Navbar() {
       </div>
 
       <div className="d-flex justify-content-between align-items-center gap-3 ms-auto me-2">
-        {location.pathname.includes("menu") && <PiCallBellFill size={"20px"} />}
+        {location.pathname.includes("menu") && (
+          <PiCallBellFill onClick={waiterHelp} size={"20px"} />
+        )}
         <Dropdown>
           <Dropdown.Toggle
             variant="link"
@@ -57,9 +111,15 @@ function Navbar() {
           </Dropdown.Toggle>
 
           <Dropdown.Menu style={{ marginTop: 0 }}>
-            <Dropdown.Item onClick={() => handleLanguage("en")}>English</Dropdown.Item>
-            <Dropdown.Item onClick={() => handleLanguage("ro")}>Romania</Dropdown.Item>
-            <Dropdown.Item onClick={() => handleLanguage("uk")}>Ukraine</Dropdown.Item>
+            <Dropdown.Item onClick={() => handleLanguage("en")}>
+              English
+            </Dropdown.Item>
+            <Dropdown.Item onClick={() => handleLanguage("ro")}>
+              Romania
+            </Dropdown.Item>
+            <Dropdown.Item onClick={() => handleLanguage("uk")}>
+              Ukraine
+            </Dropdown.Item>
           </Dropdown.Menu>
         </Dropdown>
         <TbReload

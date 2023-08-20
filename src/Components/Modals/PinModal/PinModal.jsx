@@ -21,9 +21,6 @@ function PinModal({
   const handleNewSession = () => {
     if (!session_uuid) {
       startNewSession();
-      if (session_uuid) {
-        getMenu();
-      }
     } else {
       getMenu();
     }

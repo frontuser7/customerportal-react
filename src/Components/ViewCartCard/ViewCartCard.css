@@ -1,3 +1,9 @@
 .addons-info {
   font-size: 12px;
 }
+
+.customize {
+  font-size: 10px;
+  color: #44ce42;
+  cursor: pointer;
+}

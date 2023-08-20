@@ -70,6 +70,7 @@ function Landing() {
       })
       .catch((err) => {
         console.log(err);
+        notify("Network Error", "error");
       });
   };
 
@@ -98,6 +99,7 @@ function Landing() {
         console.log(res.data);
         if (res.data.status === "success") {
           dispatch(restoSession(res.data.data));
+          getMenu();
         } else {
           notify("Fail to create session", "error");
         }
@@ -122,6 +124,7 @@ function Landing() {
           } else {
             setCheckPin("");
             setShowPinModal(false);
+            getMenu();
           }
         })
         .catch((err) => {
@@ -157,8 +160,7 @@ function Landing() {
       } else {
         if (!session_uuid) {
           startNewSession();
-        }
-        if (session_uuid) {
+        } else {
           getMenu();
         }
       }

@@ -7,6 +7,9 @@ import restoDetailsSlice from "./restoDetailsSlice";
 import restoLanguageSlice from "./restoLanguageSlice";
 import restoSessionSlice from "./restoSessionSlice";
 import restoMenuListSlice from "./restoMenuListSlice";
+import addToCartSlice from "./addToCartSlice";
+import cartItemsSlice from "./cartItemsSlice";
+import cartInfoSlice from "./cartInfoSlice";
 
 const persistConfig = {
   key: "root",
@@ -19,6 +22,9 @@ const reducer = combineReducers({
   restoLanguage: restoLanguageSlice,
   restoSession: restoSessionSlice,
   menuData: restoMenuListSlice,
+  cartData: addToCartSlice,
+  cartItemData: cartItemsSlice,
+  cartInfo: cartInfoSlice,
 });
 
 const persistedReducer = persistReducer(persistConfig, reducer);

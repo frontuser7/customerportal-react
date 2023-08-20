@@ -1,12 +1,12 @@
 import React from "react";
 import "./TablePin.css";
 
-function TablePin({ session_pin }) {
+function TablePin({ name, value }) {
   return (
     <div>
       <div className="d-flex mt-2 justify-content-center gap-1">
-        <div className="pin rounded-start-pill fw-bold">Pin</div>
-        <div className="pinNumber rounded-end-pill">{session_pin}</div>
+        <div className="pin rounded-start-pill fw-bold">{name}</div>
+        <div className="pinNumber rounded-end-pill">{value}</div>
       </div>
     </div>
   );
